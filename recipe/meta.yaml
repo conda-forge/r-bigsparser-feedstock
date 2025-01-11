@@ -34,6 +34,11 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-matrix
+    - r-rcpp
+    - r-rcppeigen
+    - r-bigassertr
+    - r-rmio >=0.4
   host:
     - r-base
     - r-matrix
@@ -59,7 +64,6 @@ about:
   license: GPL-3.0-only
   summary: Provide a sparse matrix format with data stored on disk, to be used in both R and C++. This is intended for more efficient use of sparse data in C++ and also when parallelizing, since data on disk does not need copying. Only a limited number of features will be implemented. For now, conversion can be performed
     from a 'dgCMatrix' or a 'dsCMatrix' from R package 'Matrix'. A new compact format is also now available.
-  license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
