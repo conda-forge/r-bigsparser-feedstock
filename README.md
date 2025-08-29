@@ -255,6 +255,3 @@ Feedstock Maintainers
 * [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
 * [@pettyalex](https://github.com/pettyalex/)
 
-
-<!-- dummy commit to enable rerendering -->
-
