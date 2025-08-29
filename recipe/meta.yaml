@@ -12,13 +12,14 @@ source:
   sha256: 9091fc62ed005fee2ed0d7e64c1c4eab5cb290683f0aa88bae83db032598486c
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  # This is needed to suppress a warning about R.dll not being found
   missing_dso_whitelist:
-    - '*/R.dll'            # [win]
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -34,11 +35,11 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-    - r-matrix
-    - r-rcpp
-    - r-rcppeigen
-    - r-bigassertr
-    - r-rmio >=0.4
+    - r-matrix                     # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcppeigen                  # [build_platform != target_platform]
+    - r-bigassertr                 # [build_platform != target_platform]
+    - r-rmio >=0.4                 # [build_platform != target_platform]
   host:
     - r-base
     - r-matrix
